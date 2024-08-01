@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -19,7 +19,7 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta content="A new Flutter project." name="description">
-
+   <meta clientid="">
   <!-- iOS meta tags & icons -->
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta content="black" name="apple-mobile-web-app-status-bar-style">
@@ -31,8 +31,16 @@
 
   <title>untitled4</title>
   <link href="manifest.json" rel="manifest">
+
+
 </head>
 <body>
+
   <script async src="flutter_bootstrap.js"></script>
+  <!-- Add these scripts before the closing </body> tag -->
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
 </body>
 </html>

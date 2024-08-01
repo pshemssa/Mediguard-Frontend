@@ -1,8 +1,10 @@
 plugins {
+   plugin 'com.google.gms.google-services'
     id "com.android.application"
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
+
 }
 
 def localProperties = new Properties()
@@ -55,4 +57,10 @@ android {
 
 flutter {
     source = "../.."
+}
+buildscript {
+    dependencies {
+        // Add this line
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
 }

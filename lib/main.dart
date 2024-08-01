@@ -1,5 +1,7 @@
-
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fire_crud/fire_crud.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/about_us_screen.dart';
@@ -11,7 +13,22 @@ import 'screens/testimonial_screen.dart';
 import 'screens/our_courses_screen.dart';
 import 'screens/newsletter_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyC1fY5RS77aLaGMXV6RrFl-b0LkEYT1MXs",
+      authDomain: "mediguard-4479e.firebaseapp.com",
+      databaseURL: "https://mediguard-4479e-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "mediguard-4479e",
+      storageBucket: "mediguard-4479e.appspot.com",
+      messagingSenderId: "140012493489",
+      appId: "1:140012493489:web:c30602d6208c3ab552a090",
+      measurementId: "G-X13T8ZP07L",
+    ),
+  );
+
   runApp(MyApp());
 }
 
@@ -31,11 +48,12 @@ class MyApp extends StatelessWidget {
         '/about': (context) => AboutUsScreen(),
         '/service': (context) => OurServiceScreen(),
         '/featured-point': (context) => FeaturedPointScreen(),
+        '/registration': (context) => LoginPage(),
         '/goals': (context) => OurGoalsScreen(),
-        '/registration': (context) => RegistrationScreen(),
         '/testimonial': (context) => TestimonialScreen(),
         '/our-courses': (context) => OurCoursesScreen(),
         '/newsletter': (context) => NewsletterScreen(),
+
       },
     );
   }
